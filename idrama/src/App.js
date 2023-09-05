@@ -54,18 +54,20 @@ const average = (arr) =>
 
   return (
       <>
-       <NavBar />
+       <NavBar movies={movies}>
+       <Logo />
+        <Search />
+        <NumResults movies={movies}/>
+        </NavBar>
        <Main movies={movies}/>
       </>
     );
   }
 
-  function NavBar(){
+  function NavBar({children}){
     return (
       <nav className="nav-bar">
-        <Logo />
-        <Search />
-        <NumResults />
+        {children}
     
    
   </nav>
@@ -80,10 +82,10 @@ function Logo (){
   )
 } 
 
-function NumResults(){
+function NumResults({movies}){
   return (
     <p className="num-results">
-    Found <strong>x</strong> results
+    Found <strong>{movies.length}</strong> results
   </p>
   )
 }
