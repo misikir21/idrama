@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+// import './index.css';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import StarRating from './StarRating';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <StarRating maxrate={10}/>
+    <StarRating maxrate={5}/>
+    <StarRating maxrate={25}/>
   </React.StrictMode>
 );
 
