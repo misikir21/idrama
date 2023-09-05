@@ -129,8 +129,16 @@ function MovieList (){
 
   return (
 <ul className="list">
-              {movies?.map((movie) => (
-                <li key={movie.imdbID}>
+        
+{movies?.map((movie) => (
+              <Movie movie={movie} key={movie.imdbID} />
+))}
+ </ul>
+  )
+};
+function  Movie({movie}){
+  return (
+<li>
                   <img src={movie.Poster} alt={`${movie.Title} poster`} />
                   <h3>{movie.Title}</h3>
                   <div>
@@ -140,11 +148,7 @@ function MovieList (){
                     </p>
                   </div>
                 </li>
-              ))}
-            </ul>
-  )
-}
-
+              )}
 function WatchedBox(){
   const [watched, setWatched] = useState(tempWatchedData);
   const [isOpen2, setIsOpen2] = useState(true);
