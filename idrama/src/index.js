@@ -9,8 +9,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		{/* <App /> */}
+		<StarRating
+			size={24}
+			message={["terriable", "bad", "good", "v.good", "awoseme"]}
+		/>
 		<StarRating maxrate={5} />
-		<StarRating size={24} />
 	</React.StrictMode>
 );
 
