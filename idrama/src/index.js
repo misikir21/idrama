@@ -9,9 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <StarRating maxrate={10}/>
     <StarRating maxrate={5}/>
-    <StarRating maxrate={25}/>
   </React.StrictMode>
 );
 

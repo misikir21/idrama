@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 const contaierstyle={
     display:"flex",
     alignItems:"center",
@@ -6,23 +6,26 @@ const contaierstyle={
 }
 const starscontainer={
     display:"flex",
-    gap:"4px"
-
+ 
 }
 const textstyle={
     lineHeight:"1",
     margin:"0"
 }
 export default function StarRating({maxrate =5}) {
+    const [rating,setrating]=useState(1)
   return (
     <div style={contaierstyle}>
         <div style={starscontainer}>
             {Array.from({length:maxrate},(_,i)=>(
-<Star i={1}/>            ))}
+<Star i={1} onRate={()=>handlerate(1 +i)}/>))}
         </div>
-        <p style={textstyle}>10</p>
+        <p style={textstyle}>{rating || ""}</p>
     </div>
   )
+  function handlerate (rating){
+      setrating(rating)
+    }
 }
 
 const starstyle={
@@ -31,9 +34,9 @@ const starstyle={
     display:"block",
     cusrsor:"pointer"
 }
-function Star(){
+function Star({onRate}){
     return(
-    <span role="button" style={starstyle}>
+    <span role="button" style={starstyle} onClick={onRate}>
 
         <svg
   xmlns="http://www.w3.org/2000/svg"
