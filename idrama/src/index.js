@@ -18,12 +18,12 @@ function Test() {
 root.render(
 	<React.StrictMode>
 		{/* <App /> */}
+		<Test />
 		<StarRating
 			size={24}
 			message={["terriable", "bad", "good", "v.good", "awoseme"]}
 		/>
 		<StarRating maxrate={5} />
-		<Test />
 	</React.StrictMode>
 );
 
