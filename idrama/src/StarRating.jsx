@@ -13,11 +13,13 @@ export default function StarRating({
 	color = "#fcc419",
 	size = 48,
 	message = [],
+	onratseting,
 }) {
 	const [rating, setrating] = useState(0);
 	const [tempRating, settempRating] = useState(0);
 	function handlerate(rating) {
 		setrating(rating);
+		onratseting(rating);
 	}
 	const textstyle = {
 		lineHeight: "1",
