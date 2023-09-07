@@ -49,15 +49,18 @@ const tempWatchedData = [
 
 const key = "9cf16b94";
 
-const average = (arr) =>
-	arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+
 export default function App() {
 	const [movies, setMovies] = useState(tempMovieData);
 	useEffect(function () {
-		fetch(`http://www.omdbapi.com/?apikey=${key}&s=love`)
-			.then((res) => res.json())
-			.then((data) => setMovies(data.Search));
-	}, []);
+	async function fetchmoives() 
+  const res=await fetch(`http://www.omdbapi.com/?apikey=${key}&s=love`)
+			const data =await res.json();
+      setMovies(data.Search);
+	}
+  fetchmoives();
+},
+[]);
 
 	return (
 		<>
