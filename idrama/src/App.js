@@ -53,14 +53,14 @@ const key = "9cf16b94";
 export default function App() {
 	const [movies, setMovies] = useState(tempMovieData);
 	useEffect(function () {
-	async function fetchmoives() 
+	async function fetchmoives()
   const res=await fetch(`http://www.omdbapi.com/?apikey=${key}&s=love`)
 			const data =await res.json();
       setMovies(data.Search);
 	}
-  fetchmoives();
-},
-[]);
+  ,fetchmoives());
+}
+[];
 
 	return (
 		<>
